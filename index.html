@@ -1045,10 +1045,30 @@
             <h2>Curriculum Vitae</h2>
             <p data-i18n="cv_desc">Choose CV format to download:</p>
             <div class="modal-buttons">
-                <a href="#" class="btn magnetic-btn">Download PDF</a>
-                <a href="#" class="btn magnetic-btn" data-i18n="btn_view_online">View Online</a>
+                <a href="cv/CV-Neisya Nur Qoyimah (1).pdf" class="btn magnetic-btn" download>
+                    Download PDF
+                </a>
+
+                <a href="#" class="btn magnetic-btn" onclick="openPdfViewer('cv/CV-Neisya Nur Qoyimah (1).pdf'); return false;" data-i18n="btn_view_online">
+                    View
+                </a>
             </div>
         </div>
+    </div>
+
+    <div class="modal" id="pdfViewerModal">
+        <div class="modal-content" style="width: 95%; max-width: 1000px; height: 90vh; padding: 0; display: flex; flex-direction: column; overflow: hidden;">
+            
+            <div style="padding: 10px 20px; background: var(--bg-color); border-bottom: 1px solid var(--main-color); display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; font-size: 1.6rem; color: var(--main-color);">CV Preview</h3>
+                <span style="font-size: 30px; cursor: pointer; color: var(--text-color); line-height: 1;" onclick="closePdfViewer()">&times;</span>
+            </div>
+
+            <div style="flex-grow: 1; width: 100%; height: 100%; background: #525659;">
+                <iframe id="pdfFrame" src="" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>
+    </div>
     </div>
 
     <div class="modal" id="portfolioModal">
@@ -1123,3 +1143,4 @@
 
 
 </html>
+
